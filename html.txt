@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Giới thiệu bản thân</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 700px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    textarea {
+      resize: vertical;
+      height: 100px;
+    }
+    .preview {
+      margin-top: 30px;
+      padding: 15px;
+      background: #eef;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Giới thiệu bản thân</h1>
+    <label for="name">Tên:</label>
+    <input type="text" id="name" placeholder="Nhập tên của bạn">
+
+    <label for="about">Giới thiệu:</label>
+    <textarea id="about" placeholder="Viết đôi dòng về bạn..."></textarea>
+
+    <label for="contact">Thông tin liên hệ:</label>
+    <input type="text" id="contact" placeholder="Email, SĐT, mạng xã hội...">
+
+    <button onclick="showPreview()" style="margin-top: 20px;">Xem trước</button>
+
+    <div class="preview" id="preview" style="display:none;"></div>
+  </div>
+
+  <script>
+    function showPreview() {
+      const name = document.getElementById('name').value;
+      const about = document.getElementById('about').value;
+      const contact = document.getElementById('contact').value;
+      const previewBox = document.getElementById('preview');
+      previewBox.innerHTML = `
+        <h2>${name}</h2>
+        <p><strong>Giới thiệu:</strong> ${about}</p>
+        <p><strong>Liên hệ:</strong> ${contact}</p>
+      `;
+      previewBox.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
